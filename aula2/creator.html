@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>PageMaker</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+    />
+    <script src="funcoes.js"></script>
+    <style>
+      .custom-bg {
+        background-color: #a64d79 !important;
+      }
+
+      .cabecalho-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+
+      .cabecalho-bg {
+        background-color: #6a1e55 !important;
+        color: white;
+        padding: 20px;
+        width: 100%;
+        text-align: center;
+      }
+
+      .cabecalho-form {
+        flex: 1 1 30%;
+        padding: 20px;
+        box-sizing: border-box;
+        text-align: left;
+        margin-bottom: 10px;
+      }
+
+      .select select,
+      .input {
+        width: 100%;
+      }
+
+      .cabecalho-form label {
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .cabecalho-form input[type="radio"] {
+        margin-left: 10px;
+      }
+
+      .cabecalho-form div {
+        margin-bottom: 10px;
+      }
+
+      textarea {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      button {
+        margin-top: 10px;
+      }
+
+      .columns {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+      }
+
+      .column {
+        flex: 1;
+        padding: 0 20px;
+      }
+
+      .column-left {
+        justify-content: left;
+      }
+
+      .column-right {
+        justify-content: right;
+      }
+    </style>
+  </head>
+
+  <body class="custom-bg p-5">
+    <div class="container mt-5 has-text-white ">
+      <div class="box cabecalho-container">
+        <div class="cabecalho-bg">
+          <h1>Cabecalho</h1>
+        </div>
+
+        <div class="cabecalho-form">
+          <label class="label">Cor de fundo</label>
+          <div class="select">
+            <select id="corFundo" name="corFundo">
+              <option>--</option>
+              <option value="#FF0000" style="background-color: #ff0000; color: white">Vermelho</option>
+              <option value="#00FF00" style="background-color: #00ff00">Verde</option>
+              <option value="#0000FF" style="background-color: #0000ff; color: white">Azul</option>
+              <option value="#FFFF00" style="background-color: #ffff00">Amarelo</option>
+              <option value="#FFA500" style="background-color: #ffa500">Laranja</option>
+              <option value="#800080" style="background-color: #800080; color: white">Roxo</option>
+            </select>
+          </div>
+          <label class="label">Texto para cabeçalho</label>
+          <input class="input" type="text" id="textoCabecalho" name="textoCabecalho" /><br />
+        </div>
+
+        <div class="cabecalho-form">
+          <label class="label">Tamanho Fonte</label>
+          <div class="select">
+            <select id="tamFonte" name="tamFonte">
+              <option>--</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="cabecalho-form">
+          <label class="label">Links</label>
+          <input
+            type="text"
+            name="links"
+            id="links"
+            placeholder="link1;link2;link3...."
+          />
+        </div>
+
+        <div class="cabecalho-form">
+          <label class="label">Cor do Link</label>
+          <div class="select">
+            <select id="corLink" name="corLink">
+              <option>--</option>
+              <option value="#FF0000" style="background-color: #ff0000; color: white">Vermelho</option>
+              <option value="#00FF00" style="background-color: #00ff00">Verde</option>
+              <option value="#0000FF" style="background-color: #0000ff; color: white">Azul</option>
+              <option value="#FFFF00" style="background-color: #ffff00">Amarelo</option>
+              <option value="#FFA500" style="background-color: #ffa500">Laranja</option>
+              <option value="#800080" style="background-color: #800080; color: white">Roxo</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="cabecalho-form">
+          <label class="label">Estilo do link</label>
+          <div>
+            <label>
+              Sublinhado
+              <input type="radio" name="estiloLinks" id="estiloLinksSublinhado" value="1">
+            </label>
+            <label>
+              Não Sublinhado
+              <input type="radio" name="estiloLinks" id="estiloLinksNaoSublinhado" value="0">
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <button onclick="gerarCodigo()">Gerar código</button>
+    </div>
+
+    <div class="custom-bg p-5">
+      <div class="container mt-5">
+        <div class="columns">
+          <div class="column column-left has-text-white ">
+            <textarea cols="100" rows="30" id="codeHTML"></textarea><br>
+            <button onclick="download('codeHTML','index.html')">Download do código HTML</button>
+          </div>
+          <div class="column column-right has-text-white ">
+            <textarea id="codeCSS" cols="100" rows="30"></textarea><br>
+            <button onclick="download('codeCSS','estilo.css')">Download do código CSS</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
