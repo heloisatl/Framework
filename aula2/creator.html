@@ -81,6 +81,22 @@
       .column-right {
         justify-content: right;
       }
+      .input-link{
+        background-color: #13161A;
+        border: solid 0.2px #646464;
+        border-radius: 6px;
+        color: #fff;
+        box-sizing: border-box;
+        padding: 10px;
+        display: block;
+        margin-bottom: 8px;
+      }
+      .btn-gerar-cod{
+        border: solid 1px gray;
+        border-radius: 20px;
+        margin-left: 6vw;
+      }
+      
     </style>
   </head>
 
@@ -123,9 +139,9 @@
           </div>
         </div>
 
-        <div class="cabecalho-form">
-          <label class="label">Links</label>
-          <input
+        <div class="cabecalho-form ">
+          <label class="label has-text-white ">Links</label>
+          <input class="input-link "
             type="text"
             name="links"
             id="links"
@@ -162,10 +178,10 @@
           </div>
         </div>
       </div>
-
-      <button onclick="gerarCodigo()">Gerar código</button>
+      
+      
     </div>
-
+    <button class="btn-gerar-cod has-background-black-ter p-3 b-1"onclick="gerarCodigo()">Gerar código</button>
     <div class="custom-bg p-5">
       <div class="container mt-5">
         <div class="columns">
