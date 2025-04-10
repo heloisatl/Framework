@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>PageMaker</title>
+    <script src="funcoes.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet" />
+
+</head>
+<!-- 
+Alterações feitas: 
+    Adicionei a função de Alinhar, tanto para o cabeçalho quanto para o body. 
+    Adicionei a opção de alterar a fonte do texto.
+    Coloquei uma função para mudar a cor do body.
+    Adicionei um hover para o(s) link(s).
+-->
+
+<body class="bg-slate-950 min-h-screen text-white">
+    <main class="max-w-6xl mx-auto p-6 space-y-8">
+
+        <header class="text-center">
+            <div class="bg-slate-900/80 p-6 rounded-xl shadow-xl">
+                <h1 class="text-4xl font-bold ">PageMaker</h1>
+                <p>Faça seu site de forma rápida e descomplicada!</p>
+            </div>
+
+        </header>
+
+        <!-- Nome do arquivo -->
+        <section class="bg-slate-900/70 rounded-xl p-6 shadow-lg space-y-4">
+            <h2 class="text-2xl font-bold border-b border-slate-600 pb-2">Arquivo HTML</h2>
+            <input
+                class="w-full p-2 rounded-md bg-slate-800 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 cursor-pointer"
+                type="text" id="nomeHTML" name="nomeHTML" placeholder="Nome do arquivo HTML" />
+            <input
+                class="w-full p-2 rounded-md bg-slate-800 text-white file:bg-blue-600 file:text-white file:rounded-md file:p-2 mt-2 cursor-pointer"
+                type="file" id="href" name="href" />
+        </section>
+
+        <!-- cabeçalho -->
+        <section class="bg-slate-900/70 rounded-xl p-6 shadow-lg space-y-6">
+            <h2 class="text-2xl font-bold border-b border-slate-600 pb-2">Estilo do Cabeçalho</h2>
+            <p>Monte o cabeçalho do seu jeito!</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+
+
+                <div>
+                    <label for="corFundo" class="block mb-2 font-semibold">Cor de Fundo</label>
+                    <select class="w-full p-2 rounded-md bg-slate-200 text-slate-900 cursor-pointer" id="corFundo"
+                        name="corFundo">
+                        <option>--</option>
+                        <option value="#FF0000" style="background-color: #FF0000; color: white;">Vermelho</option>
+                        <option value="#FF7F00" style="background-color: #FF7F00;">Laranja Claro</option>
+                        <option value="#FFA500" style="background-color: #FFA500;">Laranja</option>
+                        <option value="#FFFF00" style="background-color: #FFFF00;">Amarelo</option>
+                        <option value="#ADFF2F" style="background-color: #ADFF2F;">Verde Limão</option>
+                        <option value="#00FF00" style="background-color: #00FF00;">Verde</option>
+                        <option value="#00FFFF" style="background-color: #00FFFF;">Ciano</option>
+                        <option value="#0000FF" style="background-color: #0000FF; color: white;">Azul</option>
+                        <option value="#4B0082" style="background-color: #4B0082; color: white;">Índigo</option>
+                        <option value="#800080" style="background-color: #800080; color: white;">Roxo</option>
+                        <option value="#EE82EE" style="background-color: #EE82EE;">Violeta Claro</option>
+                        <option value="#FFFFFF" style="background-color: #FFFFFF;">Branco</option>
+                        <option value="#808080" style="background-color: #808080;">Cinza</option>
+                        <option value="#000000" style="background-color: #000000; color: white;">Preto</option>
+                    </select>
+                </div>
+
+
+                <div>
+                    <label for="textoCabecalho" class="block mb-2 font-semibold ">Texto para o Cabeçalho</label>
+                    <input class="w-full p-2 rounded-md bg-slate-200 text-slate-900 cursor-pointer" type="text"
+                        id="textoCabecalho" name="textoCabecalho" />
+                </div>
+
+
+                <div>
+                    <label for="corFonte" class="block mb-2 font-semibold">Cor da Fonte</label>
+                    <select class="w-full p-2 rounded-md bg-slate-200 text-slate-900 cursor-pointer" id="corFonte"
+                        name="corFonte">
+                        <option>--</option>
+                        <option value="#FF0000" style="background-color: #FF0000; color: white;">Vermelho</option>
+                        <option value="#FF7F00" style="background-color: #FF7F00;">Laranja Claro</option>
+                        <option value="#FFA500" style="background-color: #FFA500;">Laranja</option>
+                        <option value="#FFFF00" style="background-color: #FFFF00;">Amarelo</option>
+                        <option value="#ADFF2F" style="background-color: #ADFF2F;">Verde Limão</option>
+                        <option value="#00FF00" style="background-color: #00FF00;">Verde</option>
+                        <option value="#00FFFF" style="background-color: #00FFFF;">Ciano</option>
+                        <option value="#0000FF" style="background-color: #0000FF; color: white;">Azul</option>
+                        <option value="#4B0082" style="background-color: #4B0082; color: white;">Índigo</option>
+                        <option value="#800080" style="background-color: #800080; color: white;">Roxo</option>
+                        <option value="#EE82EE" style="background-color: #EE82EE;">Violeta Claro</option>
+                        <option value="#FFFFFF" style="background-color: #FFFFFF;">Branco</option>
+                        <option value="#808080" style="background-color: #808080;">Cinza</option>
+                        <option value="#000000" style="background-color: #000000; color: white;">Preto</option>
+                    </select>
+                </div>
+
+
+                <div>
+                    <label for="tamFonte" class="block mb-2 font-semibold">Tamanho da Fonte</label>
+                    <select class="w-full p-2 rounded-md bg-slate-200 text-slate-900 cursor-pointer" id="tamFonte"
+                        name="tamFonte">
+                        <option>--</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="20">25</option>
+                        <option value="21">30</option>
+                        <option value="22">35</option>
+                        <option value="23">40</option>
+                    </select>
+                </div>
+                <!-- Fonte do texto do Cabecalho -->
+                <div>
+                    <label for="fonte">Fonte do texto:</label>
+                    <select class="w-full p-2 rounded-md bg-slate-200 text-slate-900 cursor-pointer" id="fonte">
+                        <option>--</option>
+                        <option value="Arial">Arial</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Courier New">Courier New</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                    </select>
+                </div>
+
+                <!-- Alinhamento do texto do Cabecalho -->
+                <div>
+                    <label for="alinhamentoTextoCabecalho">Alinhamento do texto:</label>
+                    <select class="w-full p-2 rounded-md bg-slate-200 text-slate-900 cursor-pointer"
+                        id="alinhamentoTextoCabecalho">
+                        <option value="left">Esquerda</option>
+                        <option value="center" selected>Centro</option>
+                        <option value="right">Direita</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- body -->
+        <section class="bg-slate-900/70 rounded-xl p-6 shadow-lg space-y-6">
+            <h2 class="text-2xl font-bold border-b border-slate-600 pb-2">Estilo do corpo site</h2>
+            <p>Monte o corpo do seu site.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 ">
+
+
+                <div>
+                    <label for="corFundoCorpo" class="block mb-2 font-semibold">Cor de Fundo do corpo</label>
+                    <select class="w-full p-2 rounded-md bg-slate-200 text-slate-900 cursor-pointer" id="corFundoCorpo"
+                        name="corFundoCorpo">
+                        <option>--</option>
+                        <option value="#FF0000" style="background-color: #FF0000; color: white;">Vermelho</option>
+                        <option value="#FF7F00" style="background-color: #FF7F00;">Laranja Claro</option>
+                        <option value="#FFA500" style="background-color: #FFA500;">Laranja</option>
+                        <option value="#FFFF00" style="background-color: #FFFF00;">Amarelo</option>
+                        <option value="#ADFF2F" style="background-color: #ADFF2F;">Verde Limão</option>
+                        <option value="#00FF00" style="background-color: #00FF00;">Verde</option>
+                        <option value="#00FFFF" style="background-color: #00FFFF;">Ciano</option>
+                        <option value="#0000FF" style="background-color: #0000FF; color: white;">Azul</option>
+                        <option value="#4B0082" style="background-color: #4B0082; color: white;">Índigo</option>
+                        <option value="#800080" style="background-color: #800080; color: white;">Roxo</option>
+                        <option value="#EE82EE" style="background-color: #EE82EE;">Violeta Claro</option>
+                        <option value="#FFFFFF" style="background-color: #FFFFFF;">Branco</option>
+                        <option value="#808080" style="background-color: #808080;">Cinza</option>
+                        <option value="#000000" style="background-color: #000000; color: white;">Preto</option>
+                    </select>
+                </div>
+
+
+                <div>
+                    <label for="textoCorpo" class="block mb-2 font-semibold">Texto para o Corpo</label>
+                    <input class="w-full p-2 rounded-md bg-slate-200 text-slate-900 cursor-pointer" type="text"
+                        id="textoCorpo" name="textoCorpo" />
+                </div>
+
+
+                <div>
+                    <label for="corFonteCorpo" class="block mb-2 font-semibold">Cor da Fonte do Corpo</label>
+                    <select class="w-full p-2 rounded-md bg-slate-200 text-slate-900 cursor-pointer" id="corFonteCorpo"
+                        name="corFonteCorpo">
+                        <option>--</option>
+                        <option value="#FF0000" style="background-color: #FF0000; color: white;">Vermelho</option>
+                        <option value="#FF7F00" style="background-color: #FF7F00;">Laranja Claro</option>
+                        <option value="#FFA500" style="background-color: #FFA500;">Laranja</option>
+                        <option value="#FFFF00" style="background-color: #FFFF00;">Amarelo</option>
+                        <option value="#ADFF2F" style="background-color: #ADFF2F;">Verde Limão</option>
+                        <option value="#00FF00" style="background-color: #00FF00;">Verde</option>
+                        <option value="#00FFFF" style="background-color: #00FFFF;">Ciano</option>
+                        <option value="#0000FF" style="background-color: #0000FF; color: white;">Azul</option>
+                        <option value="#4B0082" style="background-color: #4B0082; color: white;">Índigo</option>
+                        <option value="#800080" style="background-color: #800080; color: white;">Roxo</option>
+                        <option value="#EE82EE" style="background-color: #EE82EE;">Violeta Claro</option>
+                        <option value="#FFFFFF" style="background-color: #FFFFFF;">Branco</option>
+                        <option value="#808080" style="background-color: #808080;">Cinza</option>
+                        <option value="#000000" style="background-color: #000000; color: white;">Preto</option>
+                    </select>
+                </div>
+
+
+                <div>
+                    <label for="tamFonteCorpo" class="block mb-2 font-semibold">Tamanho da Fonte</label>
+                    <select class="w-full p-2 rounded-md bg-slate-200 text-slate-900 cursor-pointer" id="tamFonteCorpo"
+                        name="tamFonteCorpo">
+                        <option>--</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="20">25</option>
+                        <option value="21">30</option>
+                        <option value="22">35</option>
+                        <option value="23">40</option>
+                    </select>
+                </div>
+
+                <!-- Fonte do texto do body -->
+                <div>
+                    <label for="fonteCorpo">Fonte do texto:</label>
+                    <select class="w-full p-2 rounded-md bg-slate-200 text-slate-900 cursor-pointer" id="fonteCorpo">
+                        <option>--</option>
+                        <option value="Arial">Arial</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Courier New">Courier New</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                    </select>
+                </div>
+
+                <!-- Alinhamento do texto do body -->
+                <div>
+                    <label for="alinhamentoTexto">Alinhamento do texto:</label>
+                    <select class="w-full p-2 rounded-md bg-slate-200 text-slate-900 cursor-pointer"
+                        id="alinhamentoTexto">
+                        <option value="left">Esquerda</option>
+                        <option value="center" selected>Centro</option>
+                        <option value="right">Direita</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- links -->
+        <section class="bg-slate-900/70 rounded-xl p-6 shadow-lg space-y-6">
+            <div class=" ">
+                <h2 class="text-2xl font-bold border-b border-slate-600 pb-2 ">Links</h2>
+                <p>Adicione Links e estilize eles.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+                <div>
+                    <label for="links" class="block mb-2 font-semibold">Texto dos Links</label>
+                    <input class="w-full p-2 rounded-md bg-slate-200 text-slate-900 placeholder-black cursor-pointer"
+                        type="text" id="links" name="links" placeholder="Exemplo: link1;link2;link3..." />
+                </div>
+
+                <div>
+                    <label for="corLinks" class="block mb-2 font-semibold">Cor dos Links</label>
+                    <select class="w-full p-2 rounded-md bg-slate-200 text-slate-900 cursor-pointer" id="corLinks"
+                        name="corLinks">
+                        <option>--</option>
+                        <option value="#FF0000" style="background-color: #FF0000; color: white;">Vermelho</option>
+                        <option value="#FF7F00" style="background-color: #FF7F00;">Laranja Claro</option>
+                        <option value="#FFA500" style="background-color: #FFA500;">Laranja</option>
+                        <option value="#FFFF00" style="background-color: #FFFF00;">Amarelo</option>
+                        <option value="#ADFF2F" style="background-color: #ADFF2F;">Verde Limão</option>
+                        <option value="#00FF00" style="background-color: #00FF00;">Verde</option>
+                        <option value="#00FFFF" style="background-color: #00FFFF;">Ciano</option>
+                        <option value="#0000FF" style="background-color: #0000FF; color: white;">Azul</option>
+                        <option value="#4B0082" style="background-color: #4B0082; color: white;">Índigo</option>
+                        <option value="#800080" style="background-color: #800080; color: white;">Roxo</option>
+                        <option value="#EE82EE" style="background-color: #EE82EE;">Violeta Claro</option>
+                        <option value="#FFFFFF" style="background-color: #FFFFFF;">Branco</option>
+                        <option value="#808080" style="background-color: #808080;">Cinza</option>
+                        <option value="#000000" style="background-color: #000000; color: white;">Preto</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="tamFonteLinks" class="block mb-2 font-semibold">Tamanho da Fonte</label>
+                    <select class="w-full p-2 rounded-md bg-slate-200 text-slate-900 cursor-pointer" id="tamFonteLinks"
+                        name="tamFonteLinks">
+                        <option>--</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="20">25</option>
+                        <option value="21">30</option>
+                        <option value="22">35</option>
+                        <option value="23">40</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="corHover" class="block mt-2 font-semibold">Cor no Hover (opcional)</label>
+                    <select class="w-full p-2 rounded-md bg-slate-200 text-slate-900 cursor-pointer" id="corHover">
+                        <option>--</option>
+                        <option value="#FF0000" style="background-color: #FF0000; color: white;">Vermelho</option>
+                        <option value="#FF7F00" style="background-color: #FF7F00;">Laranja Claro</option>
+                        <option value="#FFA500" style="background-color: #FFA500;">Laranja</option>
+                        <option value="#FFFF00" style="background-color: #FFFF00;">Amarelo</option>
+                        <option value="#ADFF2F" style="background-color: #ADFF2F;">Verde Limão</option>
+                        <option value="#00FF00" style="background-color: #00FF00;">Verde</option>
+                        <option value="#00FFFF" style="background-color: #00FFFF;">Ciano</option>
+                        <option value="#0000FF" style="background-color: #0000FF; color: white;">Azul</option>
+                        <option value="#4B0082" style="background-color: #4B0082; color: white;">Índigo</option>
+                        <option value="#800080" style="background-color: #800080; color: white;">Roxo</option>
+                        <option value="#EE82EE" style="background-color: #EE82EE;">Violeta Claro</option>
+                        <option value="#FFFFFF" style="background-color: #FFFFFF;">Branco</option>
+                        <option value="#808080" style="background-color: #808080;">Cinza</option>
+                        <option value="#000000" style="background-color: #000000; color: white;">Preto</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="inline-flex items-center mt-2">
+                        <input type="checkbox" id="ativarHover" class="mr-2">
+                        Adicionar efeito hover nos links?
+                    </label>
+                </div>
+
+                <div>
+                    <label class="block mb-2 font-semibold">Estilo dos Links</label>
+                    <div class="space-y-1 text-slate-200">
+                        <label><input type="radio" class="cursor-pointer" name="estiloLinks" value="1" />
+                            Sublinhado</label><br />
+                        <label><input type="radio" class="cursor-pointer" name="estiloLinks" value="0" /> Não
+                            Sublinhado</label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- gerar codigo -->
+        <section class="text-center">
+            <button
+                class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl shadow-md transition-all"
+                onclick="gerarCodigo()">Gerar Código</button>
+        </section>
+
+
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- HTML -->
+            <div class="bg-slate-900/70 p-4 rounded-xl shadow-lg">
+                <h3 class="text-2xl font-bold mb-4 text-center">HTML</h3>
+                <textarea id="codeHTML" class="w-full h-72 p-4 rounded-md bg-slate-800 text-white"></textarea>
+                <button class="mt-4 w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md"
+                    onclick="download('codeHTML','')">Download HTML</button>
+            </div>
+
+            <!-- CSS -->
+            <div class="bg-slate-900/70 p-4 rounded-xl shadow-lg">
+                <h3 class="text-2xl font-bold mb-4 text-center">CSS</h3>
+                <textarea id="codeCSS" class="w-full h-72 p-4 rounded-md bg-slate-800 text-white"></textarea>
+                <button class="mt-4 w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md"
+                    onclick="download('codeCSS','estilo.css')">Download CSS</button>
+            </div>
+        </section>
+
+    </main>
+</body>
+<script src="https://cdn.tailwindcss.com"></script>
+
+
+</html>
